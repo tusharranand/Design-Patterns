@@ -1,39 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Behavioral.Strategy
+﻿namespace Behavioral.Strategy
 {
-    class Context
+    internal class Context
     {
-        private IStrategy _strategy;
-        public Context()
-        { }
-
-        public Context(IStrategy strategy)
-        {
-            this._strategy = strategy;
-        }
+        private IStrategy? _strategy;
 
         public void SetStrategy(IStrategy strategy)
         {
-            this._strategy = strategy;
+            Console.WriteLine("Setting strategy in context class provided by/set for the client. Press any key to proceed...");
+            _ = Console.ReadKey();
+            _strategy = strategy;
         }
 
         public void DoSomeBusinessLogic()
         {
-            Console.WriteLine("Context: Sorting data using the strategy (not sure how it'll do it)");
-            var result = this._strategy.DoAlgorithm(new List<string> { "a", "b", "c", "d", "e" });
+            Console.WriteLine("Context: Sorting data using the strategy (context class is not sure how it'll do it)");
 
-            string resultStr = string.Empty;
-            foreach (var element in result as List<string>)
-            {
-                resultStr += element + ",";
-            }
+            List<string> input = ["b", "c", "e", "d", "a"];
+            Console.WriteLine("Input List: " + string.Join(",", input));
 
-            Console.WriteLine(resultStr);
+            List<string> result = _strategy.DoAlgorithm(input);
+
+            Console.WriteLine("Response List from strategy used: " + string.Join(",", result) + "\n");
         }
     }
 }

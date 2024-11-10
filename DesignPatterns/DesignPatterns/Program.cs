@@ -1,4 +1,5 @@
-﻿using Structural.Adapter;
+﻿using Behavioral.Strategy;
+using Structural.Adapter;
 
 namespace DesignPatterns
 {
@@ -112,7 +113,71 @@ namespace DesignPatterns
 
         private static void StartBehavioralTesting()
         {
-            throw new NotImplementedException();
+            int choice = default;
+            do
+            {
+                Console.WriteLine("Enter a number to test related Structural Design Pattern");
+                Console.WriteLine("1. Chain of Responsibility");
+                Console.WriteLine("2. Command");
+                Console.WriteLine("3. Iterator");
+                Console.WriteLine("4. Mediator");
+                Console.WriteLine("5. Memento");
+                Console.WriteLine("6. Observer");
+                Console.WriteLine("7. State");
+                Console.WriteLine("8. Strategy");
+                Console.WriteLine("9. Template");
+                Console.WriteLine("10. Visitor");
+                Console.WriteLine("11. EXIT");
+                try
+                {
+                    Console.Write("\nEnter yout choice here: ");
+                    choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.WriteLine("Starting Chain of Responsibility");
+                            break;
+                        case 2:
+                            Console.WriteLine("Starting Command");
+                            break;
+                        case 3:
+                            Console.WriteLine("Starting Iterator");
+                            break;
+                        case 4:
+                            Console.WriteLine("Starting Mediator");
+                            break;
+                        case 5:
+                            Console.WriteLine("Starting Memento");
+                            break;
+                        case 6:
+                            Console.WriteLine("Starting Observer");
+                            break;
+                        case 7:
+                            Console.WriteLine("Starting State");
+                            break;
+                        case 8:
+                            Console.WriteLine("Starting Strategy");
+                            StrategyStartPoint.StartStrategyDemo();
+                            break;
+                        case 9:
+                            Console.WriteLine("Starting Template");
+                            break;
+                        case 10:
+                            Console.WriteLine("Starting Visitor");
+                            break;
+                        case 11:
+                            Console.WriteLine("Exiting Sub Menu.");
+                            break;
+                        default:
+                            Console.WriteLine("Please enter on of the given options.");
+                            break;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Please Enter a valid choice.");
+                }
+            } while (choice != 11);
         }
     }
 }
