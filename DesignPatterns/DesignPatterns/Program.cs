@@ -1,4 +1,5 @@
 ﻿using Behavioral.Strategy;
+using Behavioral.ChainOfResponsibility;
 using Structural.Adapter;
 
 namespace DesignPatterns
@@ -136,6 +137,7 @@ namespace DesignPatterns
                     {
                         case 1:
                             Console.WriteLine("Starting Chain of Responsibility");
+                            ChainOfResponsibilityStartPoint.StartChainOfResponsibilityDemo();
                             break;
                         case 2:
                             Console.WriteLine("Starting Command");

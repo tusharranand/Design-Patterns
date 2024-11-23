@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Behavioral.ChainOfResponsibility
 {
-    class Client
+    public class ChainOfResponsibilityStartPoint
     {
-        public void Main()
+        public static void StartChainOfResponsibilityDemo()
         {
             var monkey = new MonkeyHandler();
             var squirrel = new SquirrelHandler();
@@ -23,7 +23,7 @@ namespace Behavioral.ChainOfResponsibility
             Console.WriteLine("Subchain: Squirrel > Dog\n");
             ClientCode(squirrel);
         }
-        public void ClientCode(AbstractHandler handler)
+        static void ClientCode(AbstractHandler handler)
         {
             foreach (var food in new List<string> { "Nut", "Banana", "Cup of coffee" })
             {
