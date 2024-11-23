@@ -1,5 +1,5 @@
-﻿using Behavioral.Strategy;
-using Behavioral.ChainOfResponsibility;
+﻿using Behavioral.ChainOfResponsibility;
+using Behavioral.Strategy;
 using Structural.Adapter;
 
 namespace DesignPatterns
