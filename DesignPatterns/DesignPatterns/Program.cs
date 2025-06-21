@@ -1,4 +1,5 @@
 ﻿using Behavioral.ChainOfResponsibility;
+using Behavioral.Command;
 using Behavioral.Strategy;
 using Structural.Adapter;
 
@@ -141,6 +142,7 @@ namespace DesignPatterns
                             break;
                         case 2:
                             Console.WriteLine("Starting Command");
+                            CommandStartPoint.CommandDemo();
                             break;
                         case 3:
                             Console.WriteLine("Starting Iterator");

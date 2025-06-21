@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Behavioral.Command
 {
-    public class StartPoint
+    public static class CommandStartPoint
     {
-        public void Main()
+        public static void CommandDemo()
         {
-            Invoker invoker = new Invoker();
+            Invoker invoker = new();
             invoker.SetOnStart(new SimpleCommand("Say Hi!"));
-            Receiver receiver = new Receiver();
+            Receiver receiver = new();
             invoker.SetOnFinish(new ComplexCommand(receiver, "Send email", "Save report"));
 
             invoker.DoSomethingImportant();
